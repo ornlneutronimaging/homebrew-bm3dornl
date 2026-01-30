@@ -20,6 +20,22 @@ brew install --cask bm3dornl
 - macOS Big Sur (11.0) or later
 - Apple Silicon (ARM64)
 
+## Note on Quarantine
+
+The app is not code-signed with an Apple Developer certificate. During installation, the cask automatically removes the macOS quarantine attribute (`xattr -cr`) so the app can launch without triggering Gatekeeper's "app is damaged" warning.
+
+If you prefer to verify the app manually before removing quarantine, you can install with:
+
+```bash
+brew install --cask --no-quarantine bm3dornl
+```
+
+Then inspect the app and remove quarantine yourself:
+
+```bash
+xattr -cr /Applications/bm3dornl.app
+```
+
 ## Updating
 
 ```bash
