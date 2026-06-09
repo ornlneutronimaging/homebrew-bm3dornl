@@ -7,7 +7,7 @@ cask "bm3dornl" do
   desc "BM3D denoising GUI for ring artifact removal in neutron imaging"
   homepage "https://github.com/ornlneutronimaging/bm3dornl"
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
   depends_on arch: :arm64
 
   app "bm3dornl.app"
