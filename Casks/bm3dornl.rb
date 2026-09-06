@@ -12,13 +12,10 @@ cask "bm3dornl" do
 
   app "bm3dornl.app"
 
-  postflight do
-    system_command "/bin/echo",
-                   args: ["Removing quarantine attribute from bm3dornl.app (app is not code-signed)..."]
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/bm3dornl.app"]
-    system_command "/bin/echo",
-                   args: ["Done. bm3dornl.app is ready to use."]
+  # The app is not code-signed, so strip the quarantine attribute that would
+  # otherwise make Gatekeeper report it as damaged.
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/bm3dornl.app"]
   end
 
   zap trash: [
