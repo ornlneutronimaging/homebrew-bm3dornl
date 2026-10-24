@@ -1,6 +1,6 @@
 cask "bm3dornl" do
-  version "0.12.0"
-  sha256 "7ba38af9ff4128d44e8aaf0ce7946807fc0b4935d7ea616fd3b5b14f7229f410"
+  version "0.12.1"
+  sha256 "a3b17b5841e2ee6bbd7aeef86866dadbb15821f91436994f2cc3ae5ec5138a58"
 
   url "https://github.com/ornlneutronimaging/bm3dornl/releases/download/v#{version}/bm3dornl-#{version}-macos-arm64.dmg"
   name "BM3DORNL"
